@@ -23,16 +23,13 @@ public class MaxCounters {
         int[] res = new int[X];
         int max = 0;
         for (int i = 0; i < A.length; i++) {
-             if (A[i] == (X+1)) {
-                   maxCounter(max, res);
-             }
-            else {
+             if (A[i] != (X+1)) {
                  res[A[i] - 1]++;
                  if (max < res[A[i]-1])
                      max = res[A[i]-1];
              }
-
-            System.out.println(Arrays.toString(res));
+            else
+                 res[A[i] - 1] = max;
         }
         return res;
     }
